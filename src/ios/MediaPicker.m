@@ -37,7 +37,11 @@
     }
     dmc.modalPresentationStyle = 0;
     if (@available(iOS 13.0, *)) {
-        dmc.modalInPresentation = true;
+        // @try{
+        //     dmc.modalInPresentation = true;
+        // }@catch (NSException *exception) {
+        //     NSLog(@"Exception: %@", exception);
+        // }
     }
     dmc._delegate=self;
     [self.viewController presentViewController:[[UINavigationController alloc]initWithRootViewController:dmc] animated:YES completion:nil];
